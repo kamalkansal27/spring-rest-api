@@ -10,4 +10,8 @@ public interface CountryService {
 //    List<Country> getAllCountries(Optional<Sort> sOder);
 
     List<Country> getAllCountries();
+
+    List<Country> getAllSorted(String field, String order);
+
+    Country getCountryByCountryCode(String code);
 }

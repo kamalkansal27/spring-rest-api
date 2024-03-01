@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,9 +22,18 @@ public class CountryServiceImpl implements CountryService{
 
     @Override
     public List<Country> getAllCountries() {
-      //  Sort sort = Sort.by(Sort.Order.by("population")).ascending();
-//        sOder.ifPresent(return myCountryRepository.findAll(sOder))
-        ;
         return myCountryRepository.findAll();
+    }
+
+    @Override
+    public List<Country> getAllSorted(String field, String order) {
+        Sort sortA = Sort.by(Sort.Order.by(field)).ascending();
+        Sort sortD = Sort.by(Sort.Order.by(field)).descending();
+        return (order.equals("ASC")) ? myCountryRepository.findAll(sortA): myCountryRepository.findAll(sortD);
+    }
+
+    @Override
+    public Country getCountryByCountryCode(String code) {
+        return myCountryRepository.getCountryByCountryCode(code);
     }
 }
