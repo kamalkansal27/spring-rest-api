@@ -36,4 +36,19 @@ public class CountryServiceImpl implements CountryService{
     public Country getCountryByCountryCode(String code) {
         return myCountryRepository.getCountryByCountryCode(code);
     }
+
+    @Override
+    public List<Country> findAllInRange(int low, int high) {
+        return myCountryRepository.findAllInRange(low, high);
+    }
+
+    @Override
+    public List<Country> getCountryByContinentName(String continent) {
+        return myCountryRepository.getCountryByContinentName(continent);
+    }
+
+    @Override
+    public List<Country> findAllStartingWithAlpha(String ch) {
+        return myCountryRepository.findAllStartingWithAlpha(ch);
+    }
 }

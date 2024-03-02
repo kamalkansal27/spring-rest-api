@@ -14,4 +14,10 @@ public interface CountryService {
     List<Country> getAllSorted(String field, String order);
 
     Country getCountryByCountryCode(String code);
+
+    List<Country> findAllInRange(int low, int high);
+
+    List<Country> getCountryByContinentName(String continent);
+
+    List<Country> findAllStartingWithAlpha(String ch);
 }
