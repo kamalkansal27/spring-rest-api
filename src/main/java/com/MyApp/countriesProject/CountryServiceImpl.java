@@ -51,4 +51,14 @@ public class CountryServiceImpl implements CountryService{
     public List<Country> findAllStartingWithAlpha(String ch) {
         return myCountryRepository.findAllStartingWithAlpha(ch);
     }
+
+    @Override
+    public List<Country> findAllOfLength(int len) {
+        return myCountryRepository.getCountryOfLength(len);
+    }
+
+    @Override
+    public List<Country> getCountryByCountryName(String country) {
+        return myCountryRepository.getCountryByCountryName(country);
+    }
 }

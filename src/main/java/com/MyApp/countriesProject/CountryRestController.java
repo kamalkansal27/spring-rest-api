@@ -41,4 +41,12 @@ public class CountryRestController {
     public List<Country> getCountriesStartingWithAlpha(@PathVariable("ch") String ch){
         return myCountryService.findAllStartingWithAlpha(ch);
     }
+    @GetMapping("/length/{len}")
+    public List<Country> getCountriesWithLength(@PathVariable("len") int len){
+        return myCountryService.findAllOfLength(len);
+    }
+    @GetMapping("/name/{country}")
+    public List<Country> getCountryByCountryName(@PathVariable("country") String country){
+        return myCountryService.getCountryByCountryName(country);
+    }
 }

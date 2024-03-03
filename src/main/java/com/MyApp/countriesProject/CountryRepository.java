@@ -27,4 +27,11 @@ public interface CountryRepository extends JpaRepository<Country, String>{
     )
     List<Country> findAllStartingWithAlpha(String ch);
 
+    @Query(
+            value = "SELECT * FROM country c WHERE LENGTH(c.country_name) = :len",
+            nativeQuery = true
+    )
+    List<Country> getCountryOfLength(int len);
+
+    public List<Country> getCountryByCountryName(String country);
 }

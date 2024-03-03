@@ -7,7 +7,6 @@ import java.util.Optional;
 
 public interface CountryService {
     Country save(Country country);
-//    List<Country> getAllCountries(Optional<Sort> sOder);
 
     List<Country> getAllCountries();
 
@@ -20,4 +19,8 @@ public interface CountryService {
     List<Country> getCountryByContinentName(String continent);
 
     List<Country> findAllStartingWithAlpha(String ch);
+
+    List<Country> findAllOfLength(int len);
+
+    List<Country> getCountryByCountryName(String country);
 }
