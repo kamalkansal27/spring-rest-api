@@ -1,5 +1,6 @@
 package com.MyApp.countriesProject;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.UUID;
@@ -10,6 +11,7 @@ public class Country {
 
     //Fields of the entity class.
     @Id
+    @JsonIgnore
   //  @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "country_id")
     private String id = UUID.randomUUID().toString();

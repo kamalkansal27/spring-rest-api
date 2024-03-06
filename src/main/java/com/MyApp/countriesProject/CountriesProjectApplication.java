@@ -30,7 +30,8 @@ public class CountriesProjectApplication {
 			try {
 				List<Country> countries = mapper.readValue(inputStream, typeReference);
 				for(Country country: countries){
-					countryService.save(country);
+					Country co = countryService.save(country);
+//					System.out.println(co.getCountryCode());
 				}
 				System.out.println("All the countries are saved");
 			} catch (Exception e){
