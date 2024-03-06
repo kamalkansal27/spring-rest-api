@@ -10,4 +10,14 @@ class CountriesProjectApplicationTests {
 	void contextLoads() {
 	}
 
+	@Test
+	void testGetAllCountries() {
+		// Given
+//		CountryRepository countryRepository;
+//		CountryServiceImpl countryService = new CountryServiceImpl(countryRepository);
+//
+//		// Then
+//		assertNotNull(countryService.getAllCountries());
+	}
+
 }
